@@ -1,0 +1,273 @@
+boton general
+.btn, .nav-item:hover {
+    background-color: #572239 !important;
+    color: white;
+    border-radius: 15px;
+    opacity:91%;
+    font-family: "Roboto Slab", serif;
+}
+.btn:hover{
+    border-color: #572239 !important;
+}
+/* dropdowns options */
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: #572239 !important;
+    color: white;
+}
+/*  verde oscuro */
+.dark-green{
+    background-color: #2F6665 !important;
+    color: white;
+}
+/* verde claro */
+.light-green{
+     background-color: #79B6B6 !important;
+    color: black;
+}
+/* rosa claro */
+.light-pink{
+    background-color: #EDB0C9 !important;
+    color: black;
+}
+/* forms input styles */
+.green-inputs{
+    border-color: #2F6665;
+    color:white;
+    width: 100%;
+}
+/* title for pages */
+.title{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 76px;
+    color:#2F6665;
+    margin: 0;
+}
+/* for input file */
+.button-wrapper {
+    position: relative;
+    text-align: center;
+    height: 200px;
+    margin: 20%;
+
+}
+.button-wrapper span.label {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #C4C4C4;
+    cursor: pointer;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+}
+#upload {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+/* end for input file */
+
+/* rectangles blue */
+.div-background-forms-login{
+    background-color: #8fb8cc;
+    text-align: center;
+}
+/* arrow for titles */
+.arrows{
+    background-image: url('../../img/flecha.png');
+     /* background-size:    5910px 38px;  */
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* links */
+a, a:hover{
+    color: white;
+    font-family: "Roboto Slab", serif;
+    text-decoration: none;
+}
+/* the button fron the navbar */
+.main-btn{
+    margin-right: 2rem;
+}
+/* toggle for avbar responsive */
+.navbar-toggler collapsed, .navbar-toggler{
+    background-color: white;
+}
+.navbar-toggler-icon{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.cart-icon{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+
+.user{
+    background-image: url('../../img/woman.png');
+    background-size:    35px 25px;
+}
+.imageUser{
+    width: 55%;
+    height: 85%;
+
+}
+
+.edit{
+    width: 4%;
+    height: 4%;
+}
+
+.info{
+    width: 50%;
+}
+/* all for card products */
+.card-store{
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 3em;
+    border-radius: 0.4em;
+    min-height: 380px;
+    max-height: 380px;
+}
+
+.card-store .card-body {
+    border: 3px solid #2F6665;
+    border-radius: 0.375em;
+    padding: 0em;
+    font-size: 20px;
+    background-color: rgb(199,87,132);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+}
+.card-store-new{
+    background-color: #2F6665;
+    margin-bottom: 3em;
+    min-height: 380px;
+    max-height: 380px;
+    width: 288px;
+    border-radius: 0.375em;
+
+}
+.card-store-new .card-body {
+    margin-top: 2em;
+    background-color: #79b6b6;
+    border: 3px solid white;
+    padding: 0em;
+    border-radius: 0.375em;
+    font-size: 25px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+}
+
+ .card-title {
+    color: white;
+}
+
+.hyperspan
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+/* card for product show */
+.div-product{
+    background-size:  100%  100%;
+    text-align: center;
+    background-color: #e3abc1;
+    border-radius: 0.375em;
+}
+.col-product-info{
+    padding: 2rem 2rem 2rem 4rem;
+    text-align: initial;
+}
+.col-product-img{
+    border: 3px solid white;
+    width: 100%;
+    max-height: 500px;
+}
+
+.editProduct{
+    width:40px;
+    height:40px;
+
+}
+
+/* for miages in home */
+.home-imgs-one{
+    background-image:url('../../img/ropa1.png');
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-imgs-two{
+    background-image:url('../../img/ropa2.png');
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* general */
+.align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    margin: 0;
+}
+.category:hover{
+    cursor:default;
+
+}
+
+.card-img-top{
+    min-height: 100%;
+    position: inherit;
+    left: 0%;
+    top: 0%;
+}
+
+.card-orders{
+    border: 3px solid #2F6665;
+    text-align: initial !important;
+}
+
+.card-orders-sell{
+    border:3px solid #79B6B6;
+    text-align: initial !important;
+}
+.card-shoppnig{
+    border: 3px solid rgb(199,87,132);
+    text-align: initial !important;
+}
+
+.product-order{
+    background-color: transparent;
+    border: 0px;
+    border-bottom:3px solid #2F6665;
+}
