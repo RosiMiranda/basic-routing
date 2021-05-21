@@ -15,7 +15,13 @@ class CreateRoutersTable extends Migration
     {
         Schema::create('routers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('activity_id')->unsigned();
             $table->string('hostname');
+
+            $table->foreign('activity_id')
+            ->references('id')
+            ->on('activities')
+            ->onCascade('delete');
         });
     }
 

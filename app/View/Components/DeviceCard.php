@@ -6,14 +6,17 @@ use Illuminate\View\Component;
 
 class DeviceCard extends Component
 {
+    public $id;
+    public $hostname;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(int $id, string $hostname)
     {
-        //
+        $this->id = $id;
+        $this->hostname = $hostname;
     }
 
     /**

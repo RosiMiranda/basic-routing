@@ -5,10 +5,9 @@
     {{-- Devices --}}
     <div class="col-3">
         <h2>Devices</h2>
-        <x-device-card></x-device-card>
-        <x-device-card></x-device-card>
-        <x-device-card></x-device-card>
-        <x-device-card></x-device-card>
+        @foreach ($routers as $router)
+            <x-device-card hostname="{{$router->hostname}}" id="{{$router->id}}"></x-device-card>    
+        @endforeach
     </div>
     {{-- Activity info --}}
     <div class="col-6">

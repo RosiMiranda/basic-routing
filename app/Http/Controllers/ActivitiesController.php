@@ -47,7 +47,9 @@ class ActivitiesController extends Controller
      */
     public function show(Activity $activity )
     {
-        return view('activities.show',['activity' => $activity]);
+        
+        $routers = Activity::find($activity->id)->routers;
+        return view('activities.show',['activity' => $activity,'routers' => $routers]);
     }
 
     /**
