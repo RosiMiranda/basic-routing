@@ -284,6 +284,10 @@ header {
     font-family: "Ubuntu";
 }
 
+header h1{
+    color: var(--header-text-secondary) !important;
+}
+
 header div {
     padding: 1rem;
 }
