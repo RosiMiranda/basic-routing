@@ -1483,12 +1483,12 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #2F6665;
-  color: #2F6665 !important;
+  box-shadow: inset 0 0 0 2px #17A748;
+  color: #17A748 ;
   background-color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Ubuntu';
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -1504,8 +1504,8 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    background-color: #572239;
-    color:white }
+    background-color: var(--main-text);
+    color:#17A748; }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,
