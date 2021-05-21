@@ -1504,7 +1504,7 @@ button,
   button:hover,
   .button:hover {
     background-color: var(--main-text);
-    color:#17A748; }
+    color:#01303f; }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,

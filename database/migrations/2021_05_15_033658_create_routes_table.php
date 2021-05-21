@@ -27,7 +27,7 @@ class CreateRoutesTable extends Migration
 
             $table->foreign('exit_interface')
                     ->references('id')
-                    ->on('interfaces')
+                    ->on('router_interfaces')
                     ->onCascade('delete');
         });
     }

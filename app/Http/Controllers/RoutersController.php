@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Router;
+use App\Activity;
+use App\RouterInterface;
+
 class RoutersController extends Controller
 {
     /**
@@ -26,6 +30,13 @@ class RoutersController extends Controller
         //
     }
 
+    public function createInterface(Router $router)
+    {
+        $id = $router->id;
+        return view('routers.create',['router'=>$router,'id'=>$id]);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,7 +56,10 @@ class RoutersController extends Controller
      */
     public function show($id)
     {
-        //
+        $router = Router::find($id);
+        $activity = Activity::find($router->activity_id);
+        $routerInterfaces = Router::find($router->id)->interfaces;
+        return view('routers.show',['activity' => $activity,'router' => $router, 'routerInterfaces'=>$routerInterfaces]);
     }
 
     /**

@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::resource('activities', 'ActivitiesController');
 Route::resource('routers', 'RoutersController');
+Route::get('routers/{router}/newInterface','RoutersController@createInterface')->name('routers.createInterface');

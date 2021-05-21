@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInterfacesTable extends Migration
+class CreateRouterInterfacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateInterfacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('interfaces', function (Blueprint $table) {
+        Schema::create('router_interfaces', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('interface_description');
             $table->bigInteger('router_id')->unsigned();
             $table->string('ipv4_address');
+            $table->string('ipv4_mask');
             $table->string('ipv6_address');
+            $table->string('ipv6_prefix');
 
             $table->foreign('router_id')
                     ->references('id')
@@ -34,6 +36,6 @@ class CreateInterfacesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interfaces');
+        Schema::dropIfExists('router_interfaces');
     }
 }
