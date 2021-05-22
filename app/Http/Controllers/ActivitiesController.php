@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Activity;
+use App\Router;
+use App\RouterInterface;
 
 class ActivitiesController extends Controller
 {
@@ -49,7 +51,8 @@ class ActivitiesController extends Controller
     {
         
         $routers = Activity::find($activity->id)->routers;
-        return view('activities.show',['activity' => $activity,'routers' => $routers]);
+        $interfaces = RouterInterface::all();
+        return view('activities.show',['activity' => $activity,'routers' => $routers,'interfaces'=>$interfaces]);
     }
 
     /**

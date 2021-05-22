@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-6">
 
-                                <input  type="button" class="delete-button" value="Borrar" onclick="deleteInterface({{ $routerinterface->id }});" >
+                                <input  type="button" class="delete-button" value="Borrar" onclick="deleteInterface({{ $routerinterface->router_id }}, {{ $routerinterface->id }});" >
                         </div>
                     </div>
                 </div>
@@ -56,26 +56,3 @@
     </div>
 
 @endsection
-@push('layout_end_body')
-<script>
-    function deleteInterface(id){
-
-        var url = "{{  route('routers.destroyInterface', 0)}}";
-        var dltUrl = url+id;
-
-        $.ajax({
-            url: dltUrl,
-            method: 'DELETE',
-            headers: {
-                'Accept': 'application/json',
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-        }).done((res) => {
-            var row = document.getElementById(id);
-            row.parentNode.removeChild(row);
-            console.log(res);
-        }).fail((jqXHR, res)=> {
-            console.log('Fallido', response);
-        })
-    }</script>
-@endpush

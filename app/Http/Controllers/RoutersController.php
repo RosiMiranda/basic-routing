@@ -34,7 +34,7 @@ class RoutersController extends Controller
     {
         $routers = Router::all();
         $id = $router->id;
-        $interfaces = Router::find($id)->interfaces;
+        $interfaces = Router::all();
         return view('routers.create',['router'=>$router,'id'=>$id,'routers'=>$routers, 'interfaces'=>$interfaces]);
     }
 

@@ -45,14 +45,16 @@
                         <form style="margin:0">
                             <div  class="command-line col-12 ">
                                 <div class="command-line col-12 text-left" style="height: 30rem;border: 2px solid #FFFFFF;overflow-y: scroll;">
-                                    @foreach ($routers as $router)
-                                        <x-commands hostname="{{$router->hostname}}" commands="Algo">
+                                    @foreach ($routers as $routercommand)
+                                        <x-commands hostname="{{$routercommand->hostname}}" commands="Algo">
                                             @foreach ($interfaces as $interface)
-                                            <div id="{{$interface->router_id}}-{{$interface->id}}">
-                                                <div>{{$interface->interface_description}}</div>
-                                                <div>ip address {{$interface->ipv4_address}} {{$interface->ipv4_mask}}</div>
-                                                <div>ipv6 address {{$interface->ipv6_address}} {{$interface->ipv6_prefix}}</div>
-                                            </div>
+                                            @if ($routercommand->id == $interface->router_id)
+                                                <div id="{{$interface->router_id}}-{{$interface->id}}">
+                                                    <div>interface {{$interface->interface_description}}</div>
+                                                    <div>ip address {{$interface->ipv4_address}} {{$interface->ipv4_mask}}</div>
+                                                    <div>ipv6 address {{$interface->ipv6_address}} {{$interface->ipv6_prefix}}</div>
+                                                </div>
+                                            @endif
                                             <br>
                                             @endforeach
                                         </x-commands>
@@ -68,3 +70,26 @@
     </div>
 </body>
 </html>
+
+<script>
+    function deleteInterface(id, router_id,interface_id){
+        console.log("entra");
+        var url = "{{  route('routers.destroyInterface', 0)}}";
+        var dltUrl = url+interface_id;
+
+        $.ajax({
+            url: dltUrl,
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+        }).done((res) => {
+            var interfaceDiv = document.getElementById(router_id+"-"+interface_id);
+            interfaceDiv.parentNode.removeChild(interfaceDiv);
+            console.log(res);
+        }).fail((jqXHR, res)=> {
+            console.log('Fallido', response);
+        })
+    }</script>
+
