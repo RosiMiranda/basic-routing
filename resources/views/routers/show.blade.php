@@ -21,8 +21,8 @@
         </div>
         <div class="row text-center">
             @foreach ($routerInterfaces as $routerinterface)
-                <div class="col-3 interface-card" style="padding-left: 0px;">
-                    <h3>Interfaz: {{$routerinterface->id}}</h3>
+                <div class="col-3 interface-card" style="padding-left: 0px;" id="card-{{$routerinterface->router_id}}-{{$routerinterface->id}}">
+                    <h3>Interfaz: </h3>
                     <h3>{{$routerinterface->interface_description}}</h3>
                     
                     <h2>Ipv4</h2>

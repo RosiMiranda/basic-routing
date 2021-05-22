@@ -93,7 +93,9 @@
         }).done((res) => {
             var interfaceDiv = document.getElementById(router_id+"-"+interface_id);
             interfaceDiv.parentNode.removeChild(interfaceDiv);
-            console.log(res);
+            
+            var cardDiv = document.getElementById("card-"+router_id+"-"+interface_id);
+            cardDiv.parentNode.removeChild(cardDiv);
         }).fail((jqXHR, res)=> {
             console.log('Fallido', res);
         })
