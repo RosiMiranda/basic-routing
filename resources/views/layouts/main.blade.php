@@ -44,12 +44,20 @@
                         <h2>Comandos</h2>
                         <form style="margin:0">
                             <div  class="command-line col-12 ">
-                                <textarea rows = "18" cols = "60" name = "commands">
-@foreach ($routers as $router)
-<x-commands hostname="{{$router->hostname}}" commands="Algo"></x-commands>
-@endforeach
-
-</textarea>
+                                <div class="command-line col-12 text-left" style="height: 30rem;border: 2px solid #FFFFFF;overflow-y: scroll;">
+                                    @foreach ($routers as $router)
+                                        <x-commands hostname="{{$router->hostname}}" commands="Algo">
+                                            @foreach ($interfaces as $interface)
+                                            <div id="{{$interface->router_id}}-{{$interface->id}}">
+                                                <div>{{$interface->interface_description}}</div>
+                                                <div>ip address {{$interface->ipv4_address}} {{$interface->ipv4_mask}}</div>
+                                                <div>ipv6 address {{$interface->ipv6_address}} {{$interface->ipv6_prefix}}</div>
+                                            </div>
+                                            <br>
+                                            @endforeach
+                                        </x-commands>
+                                    @endforeach
+                                </div>
                             </div>
                             <button class="add-button "> Subir Actividad</button>                
                         </form>

@@ -47,11 +47,7 @@
                         </div>
                         <div class="col-6">
 
-                            <form action="{{ route('routers.destroyInterface', ['routerinterface' => $routerinterface, 'router'=> $routerinterface->router_id]) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <input class="btn delete-button" type="submit" value="Borrar">
-                            </form>
+                                <input  type="button" class="delete-button" value="Borrar" onclick="deleteInterface({{ $routerinterface->id }});" >
                         </div>
                     </div>
                 </div>
@@ -60,3 +56,26 @@
     </div>
 
 @endsection
+@push('layout_end_body')
+<script>
+    function deleteInterface(id){
+
+        var url = "{{  route('routers.destroyInterface', 0)}}";
+        var dltUrl = url+id;
+
+        $.ajax({
+            url: dltUrl,
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+        }).done((res) => {
+            var row = document.getElementById(id);
+            row.parentNode.removeChild(row);
+            console.log(res);
+        }).fail((jqXHR, res)=> {
+            console.log('Fallido', response);
+        })
+    }</script>
+@endpush

@@ -322,8 +322,9 @@ header .selected {
 .command-line {
     background: #000000;
     color: var(--console-text);
+    font-family: "Ubuntu";
+    font-size: 12px;
 }
-
 .command-line h2,
 input[type="text"],
 textarea {

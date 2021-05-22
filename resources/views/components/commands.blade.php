@@ -1,2 +1,5 @@
+<div id="{{$hostname}}">
 !{{$hostname}}
-{{$commands}}
+{{ $slot }}
+<br>
+</div>

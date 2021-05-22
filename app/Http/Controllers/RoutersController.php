@@ -34,7 +34,8 @@ class RoutersController extends Controller
     {
         $routers = Router::all();
         $id = $router->id;
-        return view('routers.create',['router'=>$router,'id'=>$id,'routers'=>$routers]);
+        $interfaces = Router::find($id)->interfaces;
+        return view('routers.create',['router'=>$router,'id'=>$id,'routers'=>$routers, 'interfaces'=>$interfaces]);
     }
 
 
@@ -71,7 +72,7 @@ class RoutersController extends Controller
         $router = Router::find($id);
         $activity = Activity::find($router->activity_id);
         $routerInterfaces = Router::find($router->id)->interfaces;
-        return view('routers.show',['activity' => $activity,'router' => $router, 'routerInterfaces'=>$routerInterfaces, 'routers'=> $routers]);
+        return view('routers.show',['activity' => $activity,'router' => $router, 'routerInterfaces'=>$routerInterfaces,'interfaces'=>$routerInterfaces, 'routers'=> $routers]);
     }
 
     /**
@@ -111,10 +112,12 @@ class RoutersController extends Controller
     public function destroyInterface(RouterInterface $routerInterface, $router)
     {
         
-        $router = $routerInterface->router_id;
-        $routerInterface->delete();
-
-        return redirect()-> route('routers.show', [$router]);
+        RouterInterface::find($id)->delete();
+        return response()->json([
+    
+            'success' => 'Record deleted successfully!'
+    
+        ]);
         
     }
 }
