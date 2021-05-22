@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::resource('activities', 'ActivitiesController');
 Route::resource('routers', 'RoutersController');
 Route::get('routers/{router}/newInterface','RoutersController@createInterface')->name('routers.createInterface');
-Route::delete('routers/{router}/deleteInterface','RoutersController@destroyInterface')->name('routers.destroyInterface');
-Route::get('routers/{router}/deleteInterface','RoutersController@destroyInterface')->name('routers.destroyInterface');
+Route::delete('routers/deleteInterface/{routerInterface}','RoutersController@destroyInterface')->name('routers.destroyInterface');
+Route::get('routers/deleteInterface/{routerInterface}','RoutersController@destroyInterface')->name('routers.destroyInterface');

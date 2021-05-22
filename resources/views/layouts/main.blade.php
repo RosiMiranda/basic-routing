@@ -16,6 +16,9 @@
         <!-- google icons -->
         <link href="https://fonts.googleapis.com/icon?family=Ubuntu"rel="stylesheet">
 
+        {{-- AJAX --}}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
         <title>Static Routing</title>
     </head>
@@ -72,10 +75,13 @@
 </html>
 
 <script>
-    function deleteInterface(id, router_id,interface_id){
+    function deleteInterface(router_id,interface_id){
         console.log("entra");
+
         var url = "{{  route('routers.destroyInterface', 0)}}";
+        console.log(url);
         var dltUrl = url+interface_id;
+        console.log(dltUrl);
 
         $.ajax({
             url: dltUrl,
@@ -89,7 +95,6 @@
             interfaceDiv.parentNode.removeChild(interfaceDiv);
             console.log(res);
         }).fail((jqXHR, res)=> {
-            console.log('Fallido', response);
+            console.log('Fallido', res);
         })
     }</script>
-

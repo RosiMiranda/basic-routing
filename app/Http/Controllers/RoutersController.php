@@ -109,7 +109,7 @@ class RoutersController extends Controller
         //
     }
     
-    public function destroyInterface(RouterInterface $routerInterface, $router)
+    public function destroyInterface($id)
     {
         
         RouterInterface::find($id)->delete();
