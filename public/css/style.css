@@ -344,10 +344,10 @@ textarea {
     box-shadow: inset 0 0 0 2px var(--edit-button-secondary);
 }
 
-.delete-button {
-    background: var(--delete-button-primary);
-    color: var(--delete-button-secondary);
-    box-shadow: inset 0 0 0 2px var(--delete-button-secondary);
+input[type="submit"] .btn .delete-button {
+    background: var(--delete-button-primary) !important;
+    color: var(--delete-button-secondary) !important;
+    box-shadow: inset 0 0 0 2px var(--delete-button-secondary) !important;
 }
 
 .save-button {

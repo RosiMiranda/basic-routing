@@ -22,7 +22,7 @@
         <div class="row text-center">
             @foreach ($routerInterfaces as $routerinterface)
                 <div class="col-3 interface-card" style="padding-left: 0px;">
-                    <h3>Interfaz:</h3>
+                    <h3>Interfaz: {{$routerinterface->id}}</h3>
                     <h3>{{$routerinterface->interface_description}}</h3>
                     
                     <h2>Ipv4</h2>
@@ -46,7 +46,12 @@
                             <button class="edit-button">Editar</button>
                         </div>
                         <div class="col-6">
-                            <button class="delete-button">Borrar</button>
+
+                            <form action="{{ route('routers.destroyInterface', ['routerinterface' => $routerinterface, 'router'=> $routerinterface->router_id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn delete-button" type="submit" value="Borrar">
+                            </form>
                         </div>
                     </div>
                 </div>

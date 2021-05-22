@@ -15,7 +15,8 @@
         
         <div class="row justify-content-around">
             <div class="col-9 form">
-                <form>
+                <form action="{{ route('routers.store') }}" method="POST">
+                    @csrf
                     <label for="iname">Nombre de la interfaz</label>
                     <input type="text" id="iname" name="iname">
 
@@ -40,11 +41,12 @@
                         <div class="col-6">
                             <label for="ipv6pref">Prefijo</label>
                             <input type="text" id="ipv6pref" name="ipv6pref">
+                            <input type="hidden" id="router_id" name="router_id" value={{$router->id}}>
                         </div>
                     </div>
                     <br>
                     <div class="row justify-content-around">
-                        <input class="btn save-button" type="submit" value="Submit">
+                        <input class="btn save-button" type="submit" value="Guardar">
                     </div>
                 </form>
             </div>

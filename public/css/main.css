@@ -1466,7 +1466,11 @@ table {
       border-top: 0; }
 
 /* Button */
-input[type="submit"],
+input[type="submit"]{
+    background: var(--delete-button-primary) !important;
+    color: var(--delete-button-secondary) !important;
+    box-shadow: inset 0 0 0 2px var(--delete-button-secondary) !important;
+}
 input[type="reset"],
 input[type="button"],
 button,
@@ -1498,7 +1502,13 @@ button,
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
-  input[type="submit"]:hover,
+
+  input[type="submit"]:hover{
+    background: var(--delete-button-secondary) !important;
+    color: var(--delete-button-primary) !important;
+    box-shadow: inset 0 0 0 2px var(--delete-button-primary) !important;
+  }
+
   input[type="reset"]:hover,
   input[type="button"]:hover,
   button:hover,
