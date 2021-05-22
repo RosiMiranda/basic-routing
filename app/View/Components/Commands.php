@@ -6,14 +6,17 @@ use Illuminate\View\Component;
 
 class Commands extends Component
 {
+    public $hostname;
+    public $commands;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $hostname, string $commands)
     {
-        //
+        $this->hostname = $hostname;
+        $this->commands = $commands;
     }
 
     /**

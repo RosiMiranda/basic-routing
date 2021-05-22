@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="row text-center h-100">
+
     <div class="col-9">
         <div class="row text-center" style="margin:1rem">
             <div class="col-3">
@@ -58,10 +58,5 @@
             @endforeach
         </div>
     </div>
-    <div class="col-3">
-        <x-commands></x-commands>
-    </div>
-</div>
-
 
 @endsection

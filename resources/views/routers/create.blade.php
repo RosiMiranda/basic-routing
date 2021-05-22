@@ -2,7 +2,6 @@
 @section('content')
 
 
-<div class="row text-center h-100 ">
     <div class="col-9">
         <div class="row text-center" style="margin:1rem">
             <div class="col-3">
@@ -53,9 +52,6 @@
         </div>
         
     </div>
-    <div class="col-3">
-        <x-commands></x-commands>
-    </div>
-</div>
+
 
 @endsection

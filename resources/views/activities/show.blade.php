@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="row text-center h-100">
     {{-- Devices --}}
     <div class="col-3">
         <h2>Devices</h2>
@@ -21,8 +20,5 @@
             <img src="/img/topology-1.png" style="max-width: 40rem; max-height: 35rem;">
         </div>
     </div>
-    <div class="col-3">
-        <x-commands></x-commands>
-    </div>
-</div>
+
 @endsection
