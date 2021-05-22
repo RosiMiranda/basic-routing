@@ -32,8 +32,9 @@ class RoutersController extends Controller
 
     public function createInterface(Router $router)
     {
+        $routers = Router::all();
         $id = $router->id;
-        return view('routers.create',['router'=>$router,'id'=>$id]);
+        return view('routers.create',['router'=>$router,'id'=>$id,'routers'=>$routers]);
     }
 
 
@@ -65,11 +66,12 @@ class RoutersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
+        $routers = Router::all();
         $router = Router::find($id);
         $activity = Activity::find($router->activity_id);
         $routerInterfaces = Router::find($router->id)->interfaces;
-        return view('routers.show',['activity' => $activity,'router' => $router, 'routerInterfaces'=>$routerInterfaces]);
+        return view('routers.show',['activity' => $activity,'router' => $router, 'routerInterfaces'=>$routerInterfaces, 'routers'=> $routers]);
     }
 
     /**
